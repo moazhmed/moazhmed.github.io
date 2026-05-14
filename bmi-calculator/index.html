@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI & Diet Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 BMI & Diet Calculator</h1>
+        
+        <!-- BMI Section -->
+        <div class="section">
+            <h2>📊 Calculate Your BMI</h2>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" placeholder="e.g., 170" min="1">
+                </div>
+                <div class="input-field">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" placeholder="e.g., 70" min="1">
+                </div>
+                <div class="input-field">
+                    <label for="age">Age (years):</label>
+                    <input type="number" id="age" placeholder="e.g., 30" min="1">
+                </div>
+            </div>
+            <button class="btn-primary" onclick="calculateBMI()">Calculate BMI</button>
+            
+            <div id="bmiResult" class="result hidden">
+                <div class="bmi-display">
+                    <div class="bmi-value-box">
+                        <p class="label">Your BMI</p>
+                        <p id="bmiValue" class="value">0.0</p>
+                    </div>
+                    <p id="bmiCategory" class="category">Category: -</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diet Section -->
+        <div class="section">
+            <h2>🍽️ Select Condition for Diet Information</h2>
+            <div class="input-field">
+                <label for="diseaseSelect">Select a Condition:</label>
+                <select id="diseaseSelect" onchange="calculateDiet()">
+                    <option value="">-- Choose a condition --</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="hypertension">Hypertension (High Blood Pressure)</option>
+                    <option value="obesity">Obesity</option>
+                    <option value="heart">Heart Disease</option>
+                    <option value="kidney">Kidney Disease</option>
+                    <option value="liver">Liver Disease</option>
+                    <option value="gout">Gout</option>
+                    <option value="anemia">Anemia</option>
+                </select>
+            </div>
+            
+            <div id="dietResult" class="result hidden">
+                <h3 id="conditionName">Condition Diet</h3>
+                
+                <div class="diet-info-box">
+                    <div class="info-item">
+                        <span class="info-label">Daily Calories:</span>
+                        <span id="caloriesInfo" class="info-value">-</span>
+                    </div>
+                </div>
+                
+                <div class="macros-container">
+                    <h4>Macronutrient Ratios:</h4>
+                    <div class="macro-box">
+                        <div class="macro-item">
+                            <span class="macro-label">🥕 Carbohydrates</span>
+                            <span id="carbs" class="macro-value">-</span>
+                        </div>
+                        <div class="macro-item">
+                            <span class="macro-label">🍗 Protein</span>
+                            <span id="protein" class="macro-value">-</span>
+                        </div>
+                        <div class="macro-item">
+                            <span class="macro-label">🥑 Fat</span>
+                            <span id="fat" class="macro-value">-</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="components-box">
+                    <h4>Diet Components & Recommendations:</h4>
+                    <ul id="dietComponents" class="components-list">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
