@@ -5,13 +5,14 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Courier New', sans-serif, Arial, Helvetica;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    direction: rtl;
 }
 
 .container {
@@ -85,6 +86,7 @@ select {
     font-size: 1em;
     transition: all 0.3s ease;
     font-family: inherit;
+    text-align: right;
 }
 
 input:focus,
@@ -183,7 +185,7 @@ select {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-    border-left: 4px solid #667eea;
+    border-right: 4px solid #667eea;
 }
 
 .info-item {
@@ -245,7 +247,7 @@ select {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid #764ba2;
+    border-right: 4px solid #764ba2;
 }
 
 .components-list {
@@ -255,7 +257,7 @@ select {
 
 .components-list li {
     padding: 10px 0;
-    padding-left: 25px;
+    padding-right: 25px;
     color: #555;
     position: relative;
     line-height: 1.5;
@@ -264,7 +266,7 @@ select {
 .components-list li:before {
     content: "✓";
     position: absolute;
-    left: 0;
+    right: 0;
     color: #667eea;
     font-weight: bold;
 }

@@ -1,95 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI & Diet Calculator</title>
+    <title>حاسبة مؤشر كتلة الجسم والنظام الغذائي</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>🏥 BMI & Diet Calculator</h1>
+        <h1>🏥 حاسبة مؤشر كتلة الجسم والنظام الغذائي</h1>
         
         <!-- BMI Section -->
         <div class="section">
-            <h2>📊 Calculate Your BMI</h2>
+            <h2>📊 احسب مؤشر كتلة الجسم</h2>
             <div class="input-group">
                 <div class="input-field">
-                    <label for="height">Height (cm):</label>
-                    <input type="number" id="height" placeholder="e.g., 170" min="1">
+                    <label for="height">الطول (سم):</label>
+                    <input type="number" id="height" placeholder="مثال: 170" min="1">
                 </div>
                 <div class="input-field">
-                    <label for="weight">Weight (kg):</label>
-                    <input type="number" id="weight" placeholder="e.g., 70" min="1">
+                    <label for="weight">الوزن (كغ):</label>
+                    <input type="number" id="weight" placeholder="مثال: 70" min="1">
                 </div>
                 <div class="input-field">
-                    <label for="age">Age (years):</label>
-                    <input type="number" id="age" placeholder="e.g., 30" min="1">
+                    <label for="age">العمر (سنة):</label>
+                    <input type="number" id="age" placeholder="مثال: 30" min="1">
                 </div>
             </div>
-            <button class="btn-primary" onclick="calculateBMI()">Calculate BMI</button>
+            <button class="btn-primary" onclick="calculateBMI()">احسب المؤشر</button>
             
             <div id="bmiResult" class="result hidden">
                 <div class="bmi-display">
                     <div class="bmi-value-box">
-                        <p class="label">Your BMI</p>
+                        <p class="label">مؤشر كتلة الجسم الخاص بك</p>
                         <p id="bmiValue" class="value">0.0</p>
                     </div>
-                    <p id="bmiCategory" class="category">Category: -</p>
+                    <p id="bmiCategory" class="category">الحالة: -</p>
                 </div>
             </div>
         </div>
         
         <!-- Diet Section -->
         <div class="section">
-            <h2>🍽️ Select Condition for Diet Information</h2>
+            <h2>🍽️ اختر الحالة الصحية للحصول على معلومات النظام الغذائي</h2>
             <div class="input-field">
-                <label for="diseaseSelect">Select a Condition:</label>
+                <label for="diseaseSelect">اختر الحالة الصحية:</label>
                 <select id="diseaseSelect" onchange="calculateDiet()">
-                    <option value="">-- Choose a condition --</option>
-                    <option value="diabetes">Diabetes</option>
-                    <option value="hypertension">Hypertension (High Blood Pressure)</option>
-                    <option value="obesity">Obesity</option>
-                    <option value="heart">Heart Disease</option>
-                    <option value="kidney">Kidney Disease</option>
-                    <option value="liver">Liver Disease</option>
-                    <option value="gout">Gout</option>
-                    <option value="anemia">Anemia</option>
+                    <option value="">-- اختر الحالة --</option>
+                    <option value="obesity">السمنة (زيادة الوزن)</option>
+                    <option value="underweight">النحافة (نقص الوزن)</option>
+                    <option value="diabetes">السكري</option>
+                    <option value="hypertension">ارتفاع ضغط الدم</option>
+                    <option value="pregnancy">الحمل</option>
+                    <option value="ulcer">قرحة المعدة</option>
+                    <option value="kidney">الفشل الكلوي</option>
+                    <option value="cancer">السرطان</option>
                 </select>
             </div>
             
             <div id="dietResult" class="result hidden">
-                <h3 id="conditionName">Condition Diet</h3>
+                <h3 id="conditionName">النظام الغذائي</h3>
                 
                 <div class="diet-info-box">
                     <div class="info-item">
-                        <span class="info-label">Daily Calories:</span>
+                        <span class="info-label">السعرات الحرارية اليومية:</span>
                         <span id="caloriesInfo" class="info-value">-</span>
                     </div>
                 </div>
                 
                 <div class="macros-container">
-                    <h4>Macronutrient Ratios:</h4>
+                    <h4>نسب العناصر الغذائية:</h4>
                     <div class="macro-box">
                         <div class="macro-item">
-                            <span class="macro-label">🥕 Carbohydrates</span>
+                            <span class="macro-label">🥕 الكربوهيدرات</span>
                             <span id="carbs" class="macro-value">-</span>
                         </div>
                         <div class="macro-item">
-                            <span class="macro-label">🍗 Protein</span>
+                            <span class="macro-label">🍗 البروتين</span>
                             <span id="protein" class="macro-value">-</span>
                         </div>
                         <div class="macro-item">
-                            <span class="macro-label">🥑 Fat</span>
+                            <span class="macro-label">🥑 الدهون</span>
                             <span id="fat" class="macro-value">-</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="components-box">
-                    <h4>Diet Components & Recommendations:</h4>
+                    <h4>نصائح وتوصيات النظام الغذائي:</h4>
                     <ul id="dietComponents" class="components-list">
-                        <li>Loading...</li>
+                        <li>جاري التحميل...</li>
                     </ul>
                 </div>
             </div>
