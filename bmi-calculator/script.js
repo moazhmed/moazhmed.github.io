@@ -2,7 +2,7 @@
 const diseaseData = {
     obesity: {
         name: "نظام غذائي لمرضى السمنة",
-        calories: "1200-1800 (نظام غذائي بسعرات منخفضة لفقدان الوزن)",
+        calories: "1200-1800",
         carbs: "45-55%",
         protein: "15-25%",
         fat: "20-30%",
@@ -19,7 +19,7 @@ const diseaseData = {
     },
     underweight: {
         name: "نظام غذائي للنحافة",
-        calories: "2200-2800 (سعرات عالية لزيادة الوزن)",
+        calories: "2200-2800",
         carbs: "50-60%",
         protein: "20-25%",
         fat: "20-30%",
@@ -36,7 +36,7 @@ const diseaseData = {
     },
     diabetes: {
         name: "نظام غذائي لمرضى السكري",
-        calories: "1800-2200 (حسب مؤشر كتلة الجسم ومستوى النشاط)",
+        calories: "1800-2200",
         carbs: "45-50%",
         protein: "15-20%",
         fat: "30-35%",
@@ -53,7 +53,7 @@ const diseaseData = {
     },
     hypertension: {
         name: "نظام غذائي لارتفاع ضغط الدم",
-        calories: "1800-2200 (حسب مؤشر كتلة الجسم)",
+        calories: "1800-2200",
         carbs: "50-55%",
         protein: "15-20%",
         fat: "25-30%",
@@ -72,7 +72,7 @@ const diseaseData = {
     },
     pregnancy: {
         name: "نظام غذائي للمرأة الحامل",
-        calories: "2000-2500 (سعرات إضافية حسب احتياجات الحمل)",
+        calories: "2000-2500",
         carbs: "50-55%",
         protein: "15-20%",
         fat: "25-30%",
@@ -90,7 +90,7 @@ const diseaseData = {
     },
     ulcer: {
         name: "نظام غذائي لقرحة المعدة",
-        calories: "1800-2200 (حسب الحالة الصحية)",
+        calories: "1800-2200",
         carbs: "50-55%",
         protein: "15-20%",
         fat: "25-30%",
@@ -111,7 +111,7 @@ const diseaseData = {
     },
     kidney: {
         name: "نظام غذائي للفشل الكلوي",
-        calories: "1800-2400 (حسب توجيهات الطبيب)",
+        calories: "1800-2400",
         carbs: "50-60%",
         protein: "10-15%",
         fat: "25-30%",
@@ -131,7 +131,7 @@ const diseaseData = {
     },
     cancer: {
         name: "نظام غذائي لمرضى السرطان",
-        calories: "2000-2500 (لتقوية المناعة)",
+        calories: "2000-2500",
         carbs: "45-50%",
         protein: "20-25%",
         fat: "25-35%",
@@ -152,7 +152,7 @@ const diseaseData = {
     }
 };
 
-// حساب مؤشر كتلة الجسم
+// حساب BMI
 function calculateBMI() {
     const height = parseFloat(document.getElementById('height').value);
     const weight = parseFloat(document.getElementById('weight').value);
@@ -167,7 +167,7 @@ function calculateBMI() {
     // تحويل الطول إلى متر
     const heightInMeters = height / 100;
     
-    // حساب مؤشر كتلة الجسم
+    // حساب BMI
     const bmi = weight / (heightInMeters * heightInMeters);
     
     // تحديد الفئة
@@ -230,7 +230,7 @@ function calculateDiet() {
     }
 }
 
-// السماح بمفتاح Enter لحساب مؤشر كتلة الجسم
+// السماح بمفتاح Enter لحساب BMI
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('age').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') calculateBMI();

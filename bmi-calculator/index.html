@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حاسبة مؤشر كتلة الجسم والنظام الغذائي</title>
+    <title>حاسبة BMI والنظام الغذائي</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>🏥 حاسبة مؤشر كتلة الجسم والنظام الغذائي</h1>
+        <h1>🏥 حاسبة BMI والنظام الغذائي</h1>
         
         <!-- BMI Section -->
         <div class="section">
-            <h2>📊 احسب مؤشر كتلة الجسم</h2>
+            <h2>📊 احسب BMI الخاص بك</h2>
             <div class="input-group">
                 <div class="input-field">
                     <label for="height">الطول (سم):</label>
@@ -27,12 +27,12 @@
                     <input type="number" id="age" placeholder="مثال: 30" min="1">
                 </div>
             </div>
-            <button class="btn-primary" onclick="calculateBMI()">احسب المؤشر</button>
+            <button class="btn-primary" onclick="calculateBMI()">احسب BMI</button>
             
             <div id="bmiResult" class="result hidden">
                 <div class="bmi-display">
                     <div class="bmi-value-box">
-                        <p class="label">مؤشر كتلة الجسم الخاص بك</p>
+                        <p class="label">BMI الخاص بك</p>
                         <p id="bmiValue" class="value">0.0</p>
                     </div>
                     <p id="bmiCategory" class="category">الحالة: -</p>
@@ -72,15 +72,15 @@
                     <h4>نسب العناصر الغذائية:</h4>
                     <div class="macro-box">
                         <div class="macro-item">
-                            <span class="macro-label">🥕 الكربوهيدرات</span>
+                            <span class="macro-label">الكربوهيدرات</span>
                             <span id="carbs" class="macro-value">-</span>
                         </div>
                         <div class="macro-item">
-                            <span class="macro-label">🍗 البروتين</span>
+                            <span class="macro-label">البروتين</span>
                             <span id="protein" class="macro-value">-</span>
                         </div>
                         <div class="macro-item">
-                            <span class="macro-label">🥑 الدهون</span>
+                            <span class="macro-label">الدهون</span>
                             <span id="fat" class="macro-value">-</span>
                         </div>
                     </div>
